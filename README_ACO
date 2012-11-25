@@ -1,0 +1,70 @@
+aco.py
+
+Author: Marcelo Costa Toyama - mctoyama@gmail.com
+License GPL v 3.0
+
+INTRODUCTION
+
+This is a Python implementation of Ant Colony Optimization.
+http://en.wikipedia.org/wiki/Ant_colony_optimization_algorithms#Common_extensions
+
+This is developed for learning and studing Artificial Inteligence tecnics /  algorithms.
+A C/C++ implementation would be much faster.
+If you are not happy with the performance, go on and rewrite the code.
+
+The code use examples from TSPLIB.
+http://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/
+
+It only suports TSP problems and EDGE_WEIGHT_TYPE of EUC_2D.
+But you can customize the code and create any graph example you want.
+See CUSTOMIZING below.
+If you think you made great changes in the code, 
+contact me and we will see if we can incorporate them.
+
+EXPLAINING THE CODE
+The code is in Object Oriented structure.
+To understand the code, you MUST have prior knoledge in Ant Colony Optimization.
+There is 5 classes Distance_matrix, TSPLIB_matrix, TSPLIB_tour, Pheromone_matrix, Colony.
+
+Distance_matrix - matrix representing a graph and its distances.
+
+TSPLIB_matrix - loads a TXT file with a TSPLIB format.
+It represents a graph in a bidimensional matrix.
+parameters: 
+- p_filename TXT file with TSPLIB graph
+
+TSPLIB_tour - loads a TXT file with optimum tour from TSPLIB format.
+It represents a optimal tour in the TSP problem
+parameters:
+- p_filename: TXT file with TSPLIB tour.
+
+Pheromone_matrix - represents a pheromone matrix for the Ant Colony Optimization algorithm.
+parameters: 
+- p_tsp_matrix : an instance of TSPLIB_matrix for creating the base pheromone matrix
+- p_Q : quantity of pheromone deposited by the ant
+- p_evap : Pheromone evaporation rate 0.0 <= p_evap <= 1.0
+
+Colony - is the code that really implements the algorithm.
+parameters:
+- p_tsplib_matrix: instance of TSPLIB_matrix for graph distances
+- p_alfa: heuristic importance of pheromone trail
+- p_beta: heuristic importance of distance
+- p_deposit_ph: quantity of pheromone deposited by the ant
+- p_evap_ph: Pheromone evaporation rate 0.0 <= p_evap <= 1.0
+
+Some notes:
+1) It is create one ant for each city and this ant starts its trail in this city.
+2) Only the Best global solution deposits pheromones in the trail.
+3) The default example dos not have the best ACO parameters. Try to find the best for you particular problem.
+
+CUSTOMIZING
+If you want to customize the code, you probably want to create you own distance matrix
+for your graph. To do this, take a look in the Distance_matrix and how it works.
+Using object orientation, especialize the Distance_matrix, respecting its methods and data,
+and create you own.
+Then simply pass your distance matrix in the p_distance_matrix parameter of Colony class.
+
+Enjoy!!
+
+
+

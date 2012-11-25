@@ -1,0 +1,16 @@
+greed.py
+
+Author: Marcelo Costa Toyama - mctoyama@gmail.com
+License GPL v 3.0
+
+INTRODUCTION
+This is a implementation of the greed algorithm in python.
+It is really simple. Given a city it found the next one
+by distance. The closest one is the next city in the TSP path.
+
+It only suports TSP problems and EDGE_WEIGHT_TYPE of EUC_2D.
+But you can customize the code and create any graph example you want.
+
+IF you want to customize the code READ README_ACO.txt
+
+
