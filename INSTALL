@@ -1,0 +1,15 @@
+INSTALL INSTRUCTIONS
+
+This is a python program.
+It was tested in python 2.7.4
+
+If you tested in differente python versions and worked, just let me know.
+
+FIRST TRY
+for a firt try, just run:
+
+python aco.py
+
+NEXT STEPS
+Read the README_ACO, it is really simply.
+
